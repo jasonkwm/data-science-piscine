@@ -32,7 +32,8 @@ def main():
     try:
         assert len(sys.argv) < 3, "more than one argument is provided"
         if (len(sys.argv) < 2):
-            str = sys.stdin.readline("What is the text to count?\n")
+            print("What is the text to count?")
+            str = sys.stdin.readline()
         else:
             str = sys.argv[1]
         building(str)
