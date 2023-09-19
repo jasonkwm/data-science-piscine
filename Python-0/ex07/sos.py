@@ -28,7 +28,7 @@ def sos(str):
         '7': '--... ', '8': '---.. ', '9': '----. ', '0': '----- '}
     for c in str.lower():
         print_str = print_str + MORSE_CODE[c]
-    print(print_str)
+    print(print_str.strip())
 
 
 def main():
@@ -49,4 +49,5 @@ def main():
         pass
 
 
-main()
+if __name__ == "__main__":
+    main()

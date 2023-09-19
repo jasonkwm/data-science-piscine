@@ -1,11 +1,9 @@
 
 def ft_filter(func, iterable):
-    """
-    filter(function or None, iterable) --> filter object
+    """filter(function or None, iterable) --> filter object
 
 Return an iterator yielding those items of iterable for which function(item)
-is true. If function is None, return the items that are true.
-    """
+is true. If function is None, return the items that are true."""
     if (func is None):
         return iterable
     return [i for i in iterable if func(i)]

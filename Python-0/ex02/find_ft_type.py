@@ -1,4 +1,4 @@
-def NULL_not_found(object: any) -> int:
+def all_thing_is_obj(object: any) -> int:
     if (type(object) == type("")):
         print("{} is in the kitchen : {}".format(object, type(object)))
     elif (type(object) == type(dict())):
