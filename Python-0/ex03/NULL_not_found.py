@@ -1,4 +1,6 @@
-def NULL_not_found(object):
+
+
+def NULL_not_found(object: any) -> int:
     isNan = float("nan")
     # print(object != object)
     if (object == None):

@@ -1,18 +1,10 @@
 import sys
 
 
-"""
-The text contains 13 characters:
-2 upper letters
-8 lower letters
-1 punctuation marks
-2 spaces
-0 digits
-
-"""
-
-
 def building(str):
+    """
+    check what does a string contains
+    """
     up, low, punc, space, digit = 0, 0, 0, 0, 0
     print(f"The text contains {len(str)} characters:")
     for s in str:

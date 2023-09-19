@@ -1,21 +1,14 @@
-from tqdm import tqdm
-from time import sleep
 
-def iterator():
-    yield "#"
 
 def ft_tqdm(lst: range) -> None:
-    loading_bar = "["
-    for i in range(40 - len(loading_bar)):
-        
-        loading_bar = loading_bar + "#"
-    loading_bar = loading_bar + "]"
-    print(loading_bar)
-    yield "#"
-    
-
-# for elem in tqdm(range(333)):
-#     sleep(0.005)
-
-for i in ft_tqdm(range(333)):
-    sleep(0.005)
+    """
+    Loading Bar function base on range
+    """
+    for i in lst:
+        loading_bar = ""
+        pcnt = (i + 1) / len(lst)
+        fill = round(pcnt * 64)
+        round_pcnt = round(pcnt * 100, 2)
+        loading_bar += (("#" * fill) + (" " * (64 - fill)))
+        yield print(f"{round_pcnt}% | [{loading_bar}] | {i + 1}/{len(lst)}   ",
+                    end="\r")
