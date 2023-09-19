@@ -17,5 +17,5 @@ source venv/Scripts/activate
 ## Install Requirements
 
 ```
-pip3 install -r req.txt
+pip3 install -r requirements.txt
 ```
