@@ -4,7 +4,7 @@ def ft_tqdm(lst: range) -> None:
     """
     Loading Bar function base on range
     """
-    for i in lst:
+    for i in range(len(lst)):
         loading_bar = ""
         pcnt = (i + 1) / len(lst)
         fill = round(pcnt * 64)
