@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# flake8 --ignore=E501
 def give_bmi(height: list[int | float], weight: list[int | float]):
     try:
         assert len(height) == len(weight), "wrong list length"
