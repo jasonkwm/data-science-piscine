@@ -14,9 +14,10 @@ def squarer_n_grayer(img, factor):
     start = round((dim - square) / 2)
     square_img = img[start:start + square, start:start + square]
     grey_img = np.dot(square_img[..., :3], [0.2989, 0.5870, 0.1140])
-    channel = grey_img.shape + (1,)
-    print(f"The shape of image is: {channel} or {grey_img.shape}")
-    print(grey_img)
+    grey_img = np.round(grey_img).astype(int)
+    ch = grey_img.shape + (1,)
+    print(f"The shape of image is: {ch} or {grey_img.shape}")
+    print(grey_img.reshape(grey_img.shape[0], grey_img.shape[1], -1))
     return grey_img
 
 
@@ -34,9 +35,8 @@ def rotater(img, factor):
         for col in range(square_img.shape[1]):
             rotated.append(square_img[:, col])
         rotated = np.array(rotated)
-        # rotated = np.transpose(square_img)
         print(f"New shape after Transpose: {rotated.shape}")
-        print(rotated.reshape(rotated.shape[0], rotated.shape[1], -1))
+        print(rotated)
         plt.imshow(rotated, cmap="gray")
         plt.show()
     except AssertionError as msg:
