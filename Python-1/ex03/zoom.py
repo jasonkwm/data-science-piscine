@@ -19,10 +19,9 @@ def zoomer(img, factor):
         ws = round((img_shape[1] - w) / 2)
         zoom_img = img[hs:h + hs, ws:w + ws]
         grey_img = np.dot(zoom_img[..., :3], [0.2989, 0.5870, 0.1140])
-        channel = (1,)
-        print(grey_img)
-        print(f"New shape after slicing: {grey_img.shape + channel}\
-            or {grey_img.shape}")
+        channel = grey_img.shape + (1,)
+        print(grey_img.reshape(grey_img.shape[0], grey_img.shape[1], -1))
+        print(f"New shape after slicing: {channel} or {grey_img.shape}")
         plt.imshow(grey_img, cmap="gray")
         plt.show()
     except AssertionError as msg:
