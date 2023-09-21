@@ -24,7 +24,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     try:
         assert np.issubdtype(np.array(bmi).dtype, np.number), "wrong type"
         assert isinstance(limit, int), "wrong type"
-        return [i < limit for i in bmi]
+        return [i > limit for i in bmi]
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
         return []

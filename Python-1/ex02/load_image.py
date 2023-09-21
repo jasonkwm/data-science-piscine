@@ -22,3 +22,6 @@ def ft_load(path: str) -> np.array:
     except UnidentifiedImageError:
         print("Error: file not image")
         return np.array([])
+    except PermissionError:
+        print("Error: file problem")
+        return np.array([])
