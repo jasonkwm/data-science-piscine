@@ -4,85 +4,121 @@ import matplotlib.pyplot as plt
 
 def ft_invert(array) -> np.array:
     """
-    shift image to specific color tone
+    Inverts the color of the image received.
     """
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
         temp = 255 - array
-        print(f"The shape of image is: {temp.shape}")
-        print("Inverts the color of the image received.")
+        print(f"The shape of image is: {array.shape}")
+        print(array)
         plt.imshow(temp)
         plt.show()
         return temp
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass
 
 
 def ft_red(array) -> np.array:
     """
-    shift image to specific color tone
+    Reds the color of the image received.
     """
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
-        temp = array * [1, 0, 0]
-        print(f"The shape of image is: {temp.shape}")
-        print("Reds the color of the image received.")
-        plt.imshow(temp)
+        new_arr = np.empty(array.shape)
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                new_arr[i, j, 0] = array[i, j, 0]
+                new_arr[i, j, 1] = 0
+                new_arr[i, j, 2] = 0
+        new_arr = new_arr.astype(int)
+        print(f"The shape of image is: {array.shape}")
+        print(array)
+        plt.imshow(new_arr)
         plt.show()
-        return temp
+        return new_arr
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass
 
 
 def ft_green(array) -> np.array:
     """
-    shift image to specific color tone
+    Greens the color of the image received.
     """
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
-        temp = array * [0, 1, 0]
-        print(f"The shape of image is: {temp.shape}")
-        print("Greens the color of the image received.")
-        plt.imshow(temp)
+        new_arr = np.empty(array.shape)
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                new_arr[i, j, 0] = 0
+                new_arr[i, j, 1] = array[i, j, 1]
+                new_arr[i, j, 2] = 0
+        new_arr = new_arr.astype(int)
+        print(f"The shape of image is: {array.shape}")
+        print(array)
+        plt.imshow(new_arr)
         plt.show()
-        return temp
+        return new_arr
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass
 
 
 def ft_blue(array) -> np.array:
     """
-    shift image to specific color tone
+    Blues the color of the image received.
     """
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
-        temp = array * [0, 0, 1]
-        print(f"The shape of image is: {temp.shape}")
-        print("Blues the color of the image received.")
-        plt.imshow(temp)
+        new_arr = np.empty(array.shape)
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                new_arr[i, j, 0] = 0
+                new_arr[i, j, 1] = 0
+                new_arr[i, j, 2] = array[i, j, 2]
+        new_arr = new_arr.astype(int)
+        print(f"The shape of image is: {array.shape}")
+        print(array)
+        plt.imshow(new_arr)
         plt.show()
-        return temp
+        return new_arr
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass
 
 
 def ft_grey(array) -> np.array:
     """
-    shift image to specific color tone
+    Greys the color of the image received.
     """
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
-        temp = np.dot(array[..., :3], [0.2989, 0.5870, 0.1140])
-        temp = temp.reshape(temp.shape[0], temp.shape[1], -1)
-        print(f"The shape of image is: {temp.shape}")
-        print("Greys the color of the image received.")
-        plt.imshow(temp, cmap="gray")
+        # grey_val = np.dot(array[..., :3], [0.2989, 0.5870, 0.1140])
+        # grey_val = grey_val.reshape(grey_val.shape[0], grey_val.shape[1], -1)
+        grey_val = np.empty(array.shape[:2] + (1,))
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                r, g, b = array[i, j, 0], array[i, j, 1], array[i, j, 2]
+                temp = r if r > g else g
+                temp = temp if temp > b else b
+                grey_val[i, j, 0] = temp
+        grey_val = grey_val.astype(int)
+        print(f"The shape of image is: {array.shape}")
+        print(array)
+        plt.imshow(grey_val, cmap="gray")
         plt.show()
-        return temp
+        return grey_val
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass

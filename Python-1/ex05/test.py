@@ -6,4 +6,8 @@
 # from pimp_image import ft_grey
 
 # array = ft_load("landscape.jpg")
+# # ft_blue(array)
+# # ft_green(array)
+# # ft_red(array)
+# # ft_grey(array)
 # ft_invert(array)

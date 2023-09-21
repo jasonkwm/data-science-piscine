@@ -28,6 +28,8 @@ def zoomer(img, factor):
         plt.show()
     except AssertionError as msg:
         print("AssertionError: {}".format(msg))
+    except KeyboardInterrupt:
+        pass
 
 
 def main():
