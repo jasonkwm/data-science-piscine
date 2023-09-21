@@ -21,3 +21,5 @@ def load(path: str) -> pd.DataFrame | None:
         return None
     except UnicodeDecodeError:
         print("Error: wrong file")
+    except Exception as e:
+        print(f"Error: {e}")
