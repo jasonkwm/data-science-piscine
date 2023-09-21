@@ -30,7 +30,11 @@ def rotater(img, factor):
         assert factor > 0 and factor <= 1, "wrong factor"
         assert len(img.shape) > 1, "image problem"
         square_img = squarer_n_grayer(img, factor)
-        rotated = np.transpose(square_img)
+        rotated = []
+        for col in range(square_img.shape[1]):
+            rotated.append(square_img[:, col])
+        rotated = np.array(rotated)
+        # rotated = np.transpose(square_img)
         print(f"New shape after Transpose: {rotated.shape}")
         print(rotated.reshape(rotated.shape[0], rotated.shape[1], -1))
         plt.imshow(rotated, cmap="gray")
