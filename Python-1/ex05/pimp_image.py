@@ -103,15 +103,8 @@ def ft_grey(array) -> np.array:
     try:
         assert (isinstance(array, np.ndarray)), "array error"
         assert (array.ndim == 3), "array problem"
-        # grey_val = np.dot(array[..., :3], [0.2989, 0.5870, 0.1140])
-        # grey_val = grey_val.reshape(grey_val.shape[0], grey_val.shape[1], -1)
-        grey_val = np.empty(array.shape[:2] + (1,))
-        for i in range(array.shape[0]):
-            for j in range(array.shape[1]):
-                r, g, b = array[i, j, 0], array[i, j, 1], array[i, j, 2]
-                temp = r if r > g else g
-                temp = temp if temp > b else b
-                grey_val[i, j, 0] = temp
+        grey_val = np.dot(array[..., :3], [0.2989, 0.5870, 0.1140])
+        grey_val = grey_val.reshape(grey_val.shape[0], grey_val.shape[1], -1)
         grey_val = grey_val.astype(int)
         print(f"The shape of image is: {array.shape}")
         print(array)
