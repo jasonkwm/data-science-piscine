@@ -1,13 +1,22 @@
 build==1.0.3
 colorama==0.4.6
+contourpy==1.1.1
+cycler==0.11.0
 flake8==6.1.0
+fonttools==4.42.1
 ft_package @ file:///C:/Users/User/Desktop/Programming%20Stuff/data-science-piscine/Python-0/ex09/dist/ft_package-0.0.1.tar.gz
+kiwisolver==1.4.5
+matplotlib==3.8.0
 mccabe==0.7.0
 numpy==1.26.0
 packaging==23.1
 Pillow==10.0.1
 pycodestyle==2.11.0
 pyflakes==3.1.0
+pyparsing==3.1.1
 pyproject_hooks==1.0.0
+python-dateutil==2.8.2
+scipy==1.11.2
+six==1.16.0
 tomli==2.0.1
 tqdm==4.66.1

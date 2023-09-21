@@ -1,1 +1,1 @@
-pip install numpy pillow scipy
+pip install numpy pillow
