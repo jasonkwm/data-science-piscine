@@ -3,6 +3,10 @@ import numpy as np
 
 
 def ft_load(path: str) -> np.array:
+    """
+    Different from previous load image
+    does not contain print
+    """
     try:
         assert isinstance(path, str), "path problem"
         img = Image.open(path)

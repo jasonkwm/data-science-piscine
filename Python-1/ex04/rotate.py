@@ -4,6 +4,9 @@ import numpy as np
 
 
 def squarer_n_grayer(img, factor):
+    """
+    Square and grey a image
+    """
     img_shape = img.shape
     dim = img_shape[0] if img_shape[0] < img_shape[1]\
         else img_shape[1]

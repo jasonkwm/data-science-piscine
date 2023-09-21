@@ -2,6 +2,10 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """
+    Inspired by fruit ninja
+    it slices stuff
+    """
     try:
         assert isinstance(family, list), "Expected list"
         assert isinstance(start, int), "Start has to be int"

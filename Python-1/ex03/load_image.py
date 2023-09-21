@@ -3,6 +3,10 @@ import numpy as np
 
 
 def ft_load(path: str) -> np.array:
+    """
+    Load image base on path given
+    print err if not cant load
+    """
     try:
         assert isinstance(path, str), "path problem"
         img = Image.open(path)
