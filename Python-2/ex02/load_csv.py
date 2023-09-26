@@ -7,7 +7,7 @@ def load(path: str) -> pd.DataFrame | None:
     """
     try:
         assert isinstance(path, str), "path problem"
-        df = pd.read_csv(path, index_col=None)
+        df = pd.read_csv(path, index_col=0)
         print(f"Loading dataset of dimensions {df.shape}")
         return df
     except AssertionError as msg:
